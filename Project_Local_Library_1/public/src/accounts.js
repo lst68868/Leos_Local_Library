@@ -38,10 +38,11 @@ function findAccountById(accounts, id) {
     
   function getBooksPossessedByAccount(account, books, authors) { 
     const bookBorrows  = [];
-    //iterate though each each book 
+    //iterate though each each book. 
     function bookPush(book, array) {
       array.push(book)
     }
+    //This helper function makes it easier to push books to an array!
     books.forEach((book) => {
     //if borrowId === accountID and the book has not been returned
       if(!book.borrows[0].returned && book.borrows[0].id === account.id) {
